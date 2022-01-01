@@ -17,6 +17,11 @@
     },
     "price": {
       "type": "integer"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
     }
   }
 }
