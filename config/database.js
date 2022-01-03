@@ -12,10 +12,10 @@ module.exports = ({ env }) => {
           host: config.host,
           port: config.port,
           database: config.database,
-          username: config.user,
+          user: config.user,
           password: config.password,
           ssl: false,
-        },
+        }
       }
     }
   }
@@ -52,7 +52,7 @@ module.exports = ({ env }) => {
           user: env('DATABASE_USERNAME', 'panzer'),
           password: env('DATABASE_PASSWORD', 'panzer'),
           ssl: env.bool('DATABASE_SSL', false),
-        },
+        }
       }
     }
   }
