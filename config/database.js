@@ -14,32 +14,11 @@ module.exports = ({ env }) => {
           database: config.database,
           user: config.user,
           password: config.password,
-          ssl: false,
+          ssl: true,
         }
       }
     }
   }
-
-  //   return {
-  //     defaultConnection: 'default',
-  //     connections: {
-  //       default: {
-  //         connector: 'bookshelf',
-  //         settings: {
-  //           client: 'postgres',
-  //           host: config.host,
-  //           port: config.port,
-  //           database: config.database,
-  //           username: config.user,
-  //           password: config.password,
-  //         },
-  //         options: {
-  //           ssl: false,
-  //         },
-  //       },
-  //     },
-  //   }
-  // }
 
   if (env('NODE_ENV') === 'development') {
     return {
