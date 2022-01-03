@@ -23,6 +23,18 @@ module.exports = ({ env }) => {
   if (env('NODE_ENV') === 'development') {
     return {
       connection: {
+        client: 'sqlite',
+        connection: {
+          filename: path.join(__dirname, '..', env('DATABASE_FILENAME', '.tmp/data.db')),
+        },
+        useNullAsDefault: true,
+      }
+    }
+  }
+
+  if (env('NODE_ENV') === 'development-postgres') {
+    return {
+      connection: {
         client: 'postgres',
         connection: {
           host: env('DATABASE_HOST', '127.0.0.1'),
@@ -35,14 +47,4 @@ module.exports = ({ env }) => {
       }
     }
   }
-
-  // return {
-  //   connection: {
-  //     client: 'sqlite',
-  //     connection: {
-  //       filename: path.join(__dirname, '..', env('DATABASE_FILENAME', '.tmp/data.db')),
-  //     },
-  //     useNullAsDefault: true,
-  //   },
-  // }
-};
+}
