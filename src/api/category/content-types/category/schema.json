@@ -30,6 +30,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::category.category"
+    },
+    "path": {
+      "type": "string"
     }
   }
 }
